@@ -9,7 +9,7 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
-        return Product::byName($request->name)
+        return Product::byTitle($request->title)
             ->byCode($request->code)
             ->byColor($request->color)
             ->byPrice($request->price_start, $request->price_end)

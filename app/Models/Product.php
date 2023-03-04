@@ -11,10 +11,10 @@ class Product extends Model
 
     protected $guarded = [];
 
-    public function scopeByName($query, ?string $name)
+    public function scopeByTitle($query, ?string $title)
     {
-        if(!empty($name)) {
-            $query->where('name', 'like', $name);
+        if(!empty($title)) {
+            $query->where('title', 'like', "%$title%");
         }
     }
 
@@ -53,7 +53,7 @@ class Product extends Model
     public function scopeByDescription($query, ?string $description)
     {
         if(!empty($description)) {
-            return $query->whereDescription($description);
+            return $query->where('description', 'like', "%$description%");
         }
     }
 }

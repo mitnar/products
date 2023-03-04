@@ -1,5 +1,7 @@
-const axios = require('axios').default;
+import axios from 'axios';
 
 export default {
-    
+    getProductsQuery(params) {
+        return axios.get('/products', { params });
+    }
 }
